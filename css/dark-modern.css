@@ -1,0 +1,78 @@
+
+:root {
+    --primary: #2f61ba;
+    --highlight: #ffffff;
+    --secondary: #c9cdd8;
+    --background: #dbdbdb;
+    --background-dark: #040933;
+    
+    --text-light: #aaaabb;
+    --text-light-hover: #ffffff;
+
+    --background-dark-translucent: #04093344;
+    --background-dark-transparent: #04093300;
+}
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Calibri';
+}
+
+body {
+    background-color: var(--background-dark);
+}
+
+
+
+.title-bar {
+    background: transparent linear-gradient(#00000088, #00000088, #00000000);
+    color: var(--highlight);
+    display: block;
+    padding: 0.25vw;
+    padding-bottom: 3vw;
+    font-size: 3vw;
+}
+
+.image-segment {
+    background: var(--background-dark) no-repeat center center;
+    background-size: cover;
+    display: block;
+    height: 50vw;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* z-index: -1; */
+}
+.dot-grain {
+    background: url('../source/dot-grain-overlay.png') repeat;
+    opacity: 0.2;
+    background-size: 4vw;
+}
+
+.title-text {
+    color: var(--text-light);
+    display: inline;
+    font: 3vw Roboto;
+}
+.title-nav {
+    /* display: inline; */
+    float: right;
+}
+.nav-item {
+    color: var(--text-light);
+    display: inline;
+    margin-right: 4vw;
+    font: 1.5vw Roboto;
+}
+.nav-item:hover {
+    color: var(--text-light-hover);
+    text-decoration: underline;
+}
