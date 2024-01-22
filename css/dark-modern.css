@@ -54,6 +54,10 @@ body {
     height: var(--segment-height);
 }
 
+.flexbox {
+    display: flex;
+}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -121,6 +125,24 @@ body {
 }
 
 /**** ABOUT US ****/
+
+
+.half-segment {
+    display: flex;
+    height: var(--segment-half-height);
+}
+.top-left-quarter {
+    width: 50%;
+}
+.top-right-quarter {
+    width: 50%;
+}
+.bottom-left-quarter {
+    width: 50%;
+}
+.bottom-right-quarter {
+    width: 50%;
+}
 
 .mission {
     color: var(--text-dark);
