@@ -6,7 +6,7 @@
     --background-light: #dbdbdb;
     --background-dark: #040933;
     
-    --text-light: #aaaabb;
+    --text-light: #ccccdd;
     --text-light-hover: #ffffff;
     --text-dark: #040933;
 
@@ -27,7 +27,11 @@
 }
 
 body {
-    background-color: var(--background-dark);
+    /* background-color: var(--background-dark); */
+    background: var(--background-dark) url("../source/laptop.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-width: 1080px;
 }
 
 
@@ -42,16 +46,23 @@ body {
     font-size: 3vw;
 }
 
+.image-segment, .transparent-segment, .light-segment, .dark-segment {
+    display: block;
+    position: relative;
+    height: var(--segment-height);
+}
 .image-segment {
     background: var(--background-dark) no-repeat center center;
     background-size: cover;
-    display: block;
-    height: var(--segment-height);
+}
+.transparent-segment {
+    background-color: transparent;
 }
 .light-segment {
     background-color: var(--background-light);
-    display: block;
-    height: var(--segment-height);
+}
+.dark-segment {
+    background-color: var(--background-dark);
 }
 
 .flexbox {
@@ -64,7 +75,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    /* z-index: -1; */
+    /* z-index: 1; */
 }
 .dot-grain {
     background: url('../source/dot-grain-overlay.png') repeat;
@@ -124,6 +135,27 @@ body {
     text-align: center;
 }
 
+.guide-arrow {
+    background-color: transparent;
+    border-bottom: 0.25vw solid var(--text-light);
+    border-right: 0.25vw solid var(--text-light);
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    top: 23vw;
+    left: 50%;
+    transform: translate(-50%,0%) rotate(45deg);
+}
+.guide-arrow::after {
+    background-color: transparent;
+    border-bottom: 0.25vw solid var(--text-light);
+    border-right: 0.25vw solid var(--text-light);
+    position: relative;
+    width: 1.5vw;
+    height: 1.5vw;
+    transform: translate(-50%,0%) rotate(45deg);
+}
+
 /**** ABOUT US ****/
 
 
@@ -131,29 +163,16 @@ body {
     display: flex;
     height: var(--segment-half-height);
 }
-.top-left-quarter {
-    width: 50%;
-}
-.top-right-quarter {
-    width: 50%;
-}
-.bottom-left-quarter {
-    width: 50%;
-}
-.bottom-right-quarter {
+.quarter-segment {
     width: 50%;
 }
 
-.mission {
-    color: var(--text-dark);
-    background-color: transparent;
-    display: block;
-    padding: 5vw 15vw;
-}
-.mission-title {
+.mission-title, .services-title {
     border-bottom: 1px solid var(--text-dark);
     position: relative;
-    width: 40%;
+    width: 70%;
+    margin-top: 5.5%;
+    margin-left: 20%;
     margin-bottom: 1vw;
     padding: 1vw 5vw;
 
@@ -161,19 +180,47 @@ body {
     font-style: italic;
     text-align: center;
 }
-.mission-statement {
+.mission-statement, .services-statement {
     position: relative;
-    width: 40%;
-    padding: 1vw 5vw;
+    width: 70%;
+    margin-left: 20%;
+    padding: 1vw 2.8vw;
     
     font-size: 1.2vw;
     text-align: center;
 }
-.mission-picture {
+.services-title, .services-statement {
+    margin-left: 10%;
+}
+
+.mission-picture, .services-picture {
     border: 2px solid var(--background-dark);
     border-radius: 50%;
-    position: absolute;
+    width: calc(0.8 * var(--segment-half-height));
+    height: calc(0.8 * var(--segment-half-height));
+    margin: calc(0.1 * var(--segment-half-height));
+
+    text-align: center;
+}
+.services-picture {
     float: right;
-    width: var(--segment-half-height);
-    height: var(--segment-half-height);
+}
+
+/**** SERVICES ****/
+
+.services-gallery {
+    padding: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-card {
+    background-color: white;
+    display: inline;
+    width: 20vw;
+    height: 30vw;
+}
+.services-card + .services-card {
+    margin-left: 4vw;
 }
